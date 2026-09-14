@@ -1,26 +1,14 @@
-[
-  {
-    "id": "pencurimovie",
-    "name": "Pencuri Movie",
-    "description": "Stream movie & series subtitle Melayu dari PencuriMovie",
-    "version": "1.0.0",
-    "author": "ziq",
-    "supportedTypes": [
-      "movie",
-      "tv"
-    ],
-    "filename": "providers/pencurimovie.js",
-    "enabled": true,
-    "logo": "",
-    "contentLanguage": [
-      "ms"
-    ],
-    "formats": [
-      "mp4",
-      "mkv"
-    ],
-    "limited": false,
-    "disabledPlatforms": [],
-    "supportsExternalPlayer": true
-  }
-]
+{
+  "id": "pencurimovie-provider",
+  "name": "PencuriMovie Sub Malay",
+  "description": "Provider filem dan siri TV Sub Malay dari PencuriMovie",
+  "version": "1.0.0",
+  "author": "Ziq",
+  "supportedTypes": ["movie", "tv"],
+  "filename": "providers/pencurimovie.js",
+  "enabled": true,
+  "contentLanguage": ["ms"],
+  "formats": ["mp4", "mkv"],
+  "limited": false,
+  "supportsExternalPlayer": true
+}
