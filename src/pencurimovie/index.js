@@ -1,4 +1,5 @@
-const pencuriMovie = require('../providers/pencurimovie');
+const axios = require('axios');
+const cheerio = require('cheerio');
 
 const MANIFEST = {
   id: 'org.nuvio.malayproviders',
@@ -7,17 +8,25 @@ const MANIFEST = {
   description: 'Provider untuk filem Sub Malay dari PencuriMovie',
   resources: ['stream'],
   types: ['movie', 'series'],
-  idPrefixes: ['tt']
+  idPrefixes: ['tt', 'tmdb']
 };
 
 async function getStreams(args) {
-  const { type, id } = args; // id contoh: tmdb:1472152
-  const tmdbId = id.replace('tmdb:', '');
+  const { type, id } = args; 
+  const cleanId = id.replace(/^(tmdb:|tt)/, '');
 
-  if (type === 'movie') {
-    return await pencuriMovie.getStreams(tmdbId, 'movie');
+  try {
+    // Letak kod skraping axios/cheerio untuk cari link stream PencuriMovie kat sini
+    // Contoh asas:
+    // const response = await axios.get(`https://pencurimovie.cam/?s=${cleanId}`);
+    // const $ = cheerio.load(response.data);
+    
+    // Untuk permulaan, kalau nak test dulu return array kosong atau link dummy:
+    return [];
+  } catch (err) {
+    console.error('Error fetching streams:', err);
+    return [];
   }
-  return [];
 }
 
 module.exports = { MANIFEST, getStreams };
