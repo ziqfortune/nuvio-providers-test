@@ -1,19 +1,19 @@
 [
   {
-    "id": "template-provider",
-    "name": "Template Provider",
-    "description": "A starter template for creating Nuvio providers.",
+    "id": "pencurimovie",
+    "name": "Pencuri Movie",
+    "description": "Stream movie & series subtitle Melayu dari PencuriMovie",
     "version": "1.0.0",
-    "author": "Your Name",
+    "author": "ziq",
     "supportedTypes": [
       "movie",
       "tv"
     ],
-    "filename": "providers/template.js",
-    "enabled": false,
+    "filename": "providers/pencurimovie.js",
+    "enabled": true,
     "logo": "",
     "contentLanguage": [
-      "en"
+      "ms"
     ],
     "formats": [
       "mp4",
