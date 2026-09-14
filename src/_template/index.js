@@ -1,29 +1,23 @@
-/**
- * Template Provider
- * Main entry point.
- */
+const pencuriMovie = require('../providers/pencurimovie');
 
-import { extractStreams } from './extractor.js';
+const MANIFEST = {
+  id: 'org.nuvio.malayproviders',
+  version: '1.0.0',
+  name: 'Malay Movie Providers',
+  description: 'Provider untuk filem Sub Malay dari PencuriMovie',
+  resources: ['stream'],
+  types: ['movie', 'series'],
+  idPrefixes: ['tt']
+};
 
-/**
- * Main function called by Nuvio
- * @param {string} tmdbId - TMDB ID of the media
- * @param {string} mediaType - 'movie' or 'tv'
- * @param {number} season - Season number (for TV)
- * @param {number} episode - Episode number (for TV)
- */
-async function getStreams(tmdbId, mediaType, season, episode) {
-    try {
-        console.log(`[Template] Request: ${mediaType} ${tmdbId}`);
+async function getStreams(args) {
+  const { type, id } = args; // id contoh: tmdb:1472152
+  const tmdbId = id.replace('tmdb:', '');
 
-        // Call your extraction logic
-        const streams = await extractStreams(tmdbId, mediaType, season, episode);
-
-        return streams;
-    } catch (error) {
-        console.error(`[Template] Error: ${error.message}`);
-        return [];
-    }
+  if (type === 'movie') {
+    return await pencuriMovie.getStreams(tmdbId, 'movie');
+  }
+  return [];
 }
 
-module.exports = { getStreams };
+module.exports = { MANIFEST, getStreams };
