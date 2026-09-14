@@ -1,20 +1,12 @@
-{
-  "id": "pencurimovie-provider",
-  "name": "PencuriMovie Sub Malay",
-  "description": "Provider filem dan siri TV Sub Malay dari PencuriMovie",
-  "version": "1.0.0",
-  "author": "Ziq",
-  "supportedTypes": ["movie", "tv"],
-  "providers": [
-    {
-      "id": "pencurimovie",
-      "name": "PencuriMovie",
-      "filename": "providers/pencurimovie.js"
-    }
-  ],
-  "enabled": true,
-  "contentLanguage": ["ms"],
-  "formats": ["mp4", "mkv"],
-  "limited": false,
-  "supportsExternalPlayer": true
-}
+[
+  {
+    "id": "pencurimovie",
+    "name": "PencuriMovie",
+    "description": "Provider filem Sub Malay",
+    "version": "1.0.0",
+    "author": "Ziq",
+    "filename": "providers/pencurimovie.js",
+    "supportedTypes": ["movie", "tv"],
+    "enabled": true
+  }
+]
