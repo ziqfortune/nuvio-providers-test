@@ -5,7 +5,13 @@
   "version": "1.0.0",
   "author": "Ziq",
   "supportedTypes": ["movie", "tv"],
-  "filename": "providers/pencurimovie.js",
+  "providers": [
+    {
+      "id": "pencurimovie",
+      "name": "PencuriMovie",
+      "filename": "providers/pencurimovie.js"
+    }
+  ],
   "enabled": true,
   "contentLanguage": ["ms"],
   "formats": ["mp4", "mkv"],
